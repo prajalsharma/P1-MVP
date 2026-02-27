@@ -1,0 +1,64 @@
+/* vault.module.css — Arkova brand */
+
+.section {
+  margin-bottom: 2.5rem;
+}
+
+.sectionHeader {
+  margin-bottom: 1rem;
+}
+
+.sectionTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+  color: var(--color-text);
+}
+
+.sectionDesc {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.empty {
+  border: 1px dashed var(--color-border);
+  border-radius: 12px;
+  padding: 3.5rem 2rem;
+  text-align: center;
+  background: var(--color-surface);
+}
+
+.emptyIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-2);
+  margin-bottom: 1rem;
+}
+
+.emptyIconInner {
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+  border: 2px solid var(--color-text-muted);
+  opacity: 0.4;
+}
+
+.emptyText {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  margin: 0 0 0.25rem;
+  font-weight: 500;
+}
+
+.emptySubtext {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  opacity: 0.6;
+  margin: 0;
+}

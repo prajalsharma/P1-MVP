@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+/* globals.css — Arkova brand: Arctic Blue / Charcoal */
+
+:root {
+  --color-bg:           #090c12;
+  --color-surface:      #0e1420;
+  --color-surface-2:    #131c2e;
+  --color-border:       #1e2d44;
+  --color-border-hover: #2a3d58;
+  --color-border-focus: #4fc3dc;
+  --color-primary:      #4fc3dc;
+  --color-primary-hover:#29aec8;
+  --color-text:         #e6eef8;
+  --color-text-muted:   #5a7496;
+  --color-text-sub:     #8aa6c4;
+  --color-error:        #f87171;
+  --color-error-bg:     rgba(248, 113, 113, 0.08);
+  --color-error-border: rgba(248, 113, 113, 0.25);
+  --color-success:      #34d399;
+  --color-success-bg:   rgba(52, 211, 153, 0.08);
+  --color-success-border:rgba(52, 211, 153, 0.25);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+}

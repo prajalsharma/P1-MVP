@@ -1,0 +1,38 @@
+/* AffiliationsEmptyState.module.css */
+
+.wrapper {
+  border: 1px dashed var(--color-border);
+  border-radius: 12px;
+  padding: 4rem 2rem;
+  text-align: center;
+  background: var(--color-surface);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.iconWrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-2);
+  color: var(--color-text-sub);
+  margin-bottom: 1.25rem;
+}
+
+.heading {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0 0 0.5rem;
+}
+
+.body {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: 1.6;
+}

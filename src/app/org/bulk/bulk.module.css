@@ -1,0 +1,520 @@
+/* bulk.module.css — Arkova P6 wizard */
+
+/* ── Page chrome ─────────────────────────────────────────────────────────── */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.pageHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.pageTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+  color: var(--color-text);
+}
+
+.pageDesc {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ── Wizard card ─────────────────────────────────────────────────────────── */
+
+.wizardCard {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+/* ── Step indicator ──────────────────────────────────────────────────────── */
+
+.stepIndicator {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface-2);
+}
+
+.stepItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.25rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  flex: 1;
+  border-right: 1px solid var(--color-border);
+  transition: color 0.15s;
+}
+
+.stepItem:last-child {
+  border-right: none;
+}
+
+.stepItem[data-state="active"] {
+  color: var(--color-text);
+}
+
+.stepItem[data-state="done"] {
+  color: var(--color-success);
+}
+
+.stepBullet {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  font-size: 0.7rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  border: 1.5px solid currentColor;
+  color: inherit;
+}
+
+.stepItem[data-state="active"] .stepBullet {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #090c12;
+}
+
+.stepItem[data-state="done"] .stepBullet {
+  background: var(--color-success);
+  border-color: var(--color-success);
+  color: #090c12;
+}
+
+.stepLabel {
+  white-space: nowrap;
+}
+
+/* ── Step body ───────────────────────────────────────────────────────────── */
+
+.stepBody {
+  padding: 2rem;
+}
+
+.stepContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 720px;
+}
+
+.stepTitle {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--color-text);
+}
+
+.stepHint {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ── Actions row ─────────────────────────────────────────────────────────── */
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding-top: 0.25rem;
+}
+
+.actionNote {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1.25rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  background: var(--color-primary);
+  color: #090c12;
+  transition: background 0.15s, opacity 0.15s;
+}
+
+.btnPrimary:hover:not(:disabled) {
+  background: var(--color-primary-hover);
+}
+
+.btnPrimary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btnSecondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1.125rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: transparent;
+  border: 1.5px solid var(--color-border);
+  color: var(--color-text-sub);
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.btnSecondary:hover {
+  border-color: var(--color-text-sub);
+  color: var(--color-text);
+}
+
+/* ── Confirm step ────────────────────────────────────────────────────────── */
+
+.confirmSummary {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.confirmStat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.875rem 1.125rem;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  min-width: 120px;
+}
+
+.confirmStatValue {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.confirmStatValue[data-color="warn"] {
+  color: #f59e0b;
+}
+
+.confirmStatValue[data-color="muted"] {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  word-break: break-all;
+}
+
+.confirmStatLabel {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+}
+
+.confirmPreview {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 1rem 1.125rem;
+}
+
+.confirmPreviewLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  margin: 0 0 0.625rem;
+}
+
+.confirmList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.confirmListItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.confirmEmail {
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.confirmMeta {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 1px 6px;
+}
+
+.confirmListMore {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+/* ── Error banner ─────────────────────────────────────────────────────────── */
+
+.errorBanner {
+  margin: 0;
+  padding: 0.625rem 0.875rem;
+  border-radius: 8px;
+  background: var(--color-error-bg);
+  border: 1px solid var(--color-error-border);
+  color: var(--color-error);
+  font-size: 0.875rem;
+}
+
+/* ── Progress section ─────────────────────────────────────────────────────── */
+
+.progressSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.progressHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.progressLabel {
+  font-size: 0.875rem;
+  color: var(--color-text-sub);
+  font-variant-numeric: tabular-nums;
+}
+
+.progressPct {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.progressTrack {
+  height: 6px;
+  border-radius: 99px;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  border-radius: 99px;
+  background: var(--color-primary);
+  transition: width 0.2s ease;
+  box-shadow: 0 0 8px rgba(79, 195, 220, 0.45);
+}
+
+/* ── Live results ─────────────────────────────────────────────────────────── */
+
+.liveResults {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-height: 280px;
+  overflow-y: auto;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: var(--color-surface-2);
+}
+
+.liveRow {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.45rem 0.875rem;
+  font-size: 0.8125rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.liveRow:last-child {
+  border-bottom: none;
+}
+
+.liveRow[data-status="processed"] .liveRowIcon {
+  color: var(--color-success);
+}
+
+.liveRow[data-status="skipped"] .liveRowIcon {
+  color: var(--color-text-muted);
+}
+
+.liveRow[data-status="error"] .liveRowIcon {
+  color: var(--color-error);
+}
+
+.liveRowIcon {
+  font-size: 0.75rem;
+  font-weight: 800;
+  width: 14px;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.liveRowEmail {
+  color: var(--color-text-sub);
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.liveRowError {
+  font-size: 0.75rem;
+  color: var(--color-error);
+  flex-shrink: 0;
+}
+
+/* ── Results step ─────────────────────────────────────────────────────────── */
+
+.resultStats {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.resultStat {
+  flex: 1;
+  min-width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-2);
+}
+
+.resultStat[data-variant="success"] {
+  border-color: var(--color-success-border);
+  background: var(--color-success-bg);
+}
+
+.resultStat[data-variant="error"] {
+  border-color: var(--color-error-border);
+  background: var(--color-error-bg);
+}
+
+.resultStatValue {
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text);
+}
+
+.resultStat[data-variant="success"] .resultStatValue {
+  color: var(--color-success);
+}
+
+.resultStat[data-variant="error"] .resultStatValue {
+  color: var(--color-error);
+}
+
+.resultStatLabel {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+/* ── Error table ─────────────────────────────────────────────────────────── */
+
+.errorTable {
+  background: var(--color-error-bg);
+  border: 1px solid var(--color-error-border);
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.errorTableTitle {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-error);
+  margin: 0 0 0.25rem;
+}
+
+.errorTableRow {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  font-size: 0.8125rem;
+}
+
+.errorTableEmail {
+  font-weight: 500;
+  color: var(--color-text-sub);
+  flex-shrink: 0;
+}
+
+.errorTableMsg {
+  color: var(--color-error);
+}
+
+/* ── Result note ─────────────────────────────────────────────────────────── */
+
+.resultNote {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.resultNote p {
+  margin: 0;
+}
+
+.resultNote code {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-size: 0.78rem;
+  color: var(--color-primary);
+}

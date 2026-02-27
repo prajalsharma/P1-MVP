@@ -1,0 +1,27 @@
+/* registry.module.css — Arkova */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.pageHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.pageTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+  color: var(--color-text);
+}
+
+.pageDesc {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}

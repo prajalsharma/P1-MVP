@@ -1,0 +1,202 @@
+/* CsvUploader.module.css — Arkova P6 */
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ── Drop zone ───────────────────────────────────────────────────────────── */
+
+.dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 2.5rem 1.5rem;
+  border: 1.5px dashed var(--color-border);
+  border-radius: 12px;
+  background: var(--color-surface);
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+  text-align: center;
+  outline: none;
+}
+
+.dropzone:hover,
+.dropzone:focus-visible {
+  border-color: var(--color-primary);
+  background: var(--color-surface-2);
+}
+
+.dropzone[data-dragging="true"] {
+  border-color: var(--color-primary);
+  background: rgba(79, 195, 220, 0.06);
+}
+
+.hiddenInput {
+  display: none;
+}
+
+.dropzoneIcon {
+  color: var(--color-text-sub);
+}
+
+.dropzoneText {
+  font-size: 0.9rem;
+  color: var(--color-text-sub);
+  margin: 0;
+}
+
+.fileName {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.dropzoneHint {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.dropzoneHint code {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-size: 0.75rem;
+  color: var(--color-text-sub);
+}
+
+/* ── Errors ──────────────────────────────────────────────────────────────── */
+
+.errorBanner {
+  margin: 0;
+  padding: 0.625rem 0.875rem;
+  border-radius: 8px;
+  background: var(--color-error-bg);
+  border: 1px solid var(--color-error-border);
+  color: var(--color-error);
+  font-size: 0.875rem;
+}
+
+.errorBanner code {
+  background: rgba(248, 113, 113, 0.15);
+  border-radius: 3px;
+  padding: 1px 4px;
+  font-size: 0.82rem;
+}
+
+/* ── Summary chips ───────────────────────────────────────────────────────── */
+
+.summary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.summaryChip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.summaryChip[data-variant="success"] {
+  background: var(--color-success-bg);
+  color: var(--color-success);
+  border: 1px solid var(--color-success-border);
+}
+
+.summaryChip[data-variant="error"] {
+  background: var(--color-error-bg);
+  color: var(--color-error);
+  border: 1px solid var(--color-error-border);
+}
+
+.summaryTotal {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  margin-left: 0.25rem;
+}
+
+/* ── Preview table ───────────────────────────────────────────────────────── */
+
+.tableWrapper {
+  overflow-x: auto;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8125rem;
+}
+
+.th {
+  position: sticky;
+  top: 0;
+  background: var(--color-surface);
+  padding: 0.6rem 0.875rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--color-text-sub);
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--color-border);
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.tr {
+  border-bottom: 1px solid var(--color-border);
+  transition: background 0.1s;
+}
+
+.tr:last-child {
+  border-bottom: none;
+}
+
+.tr:hover {
+  background: var(--color-surface-2);
+}
+
+.tr[data-invalid="true"] {
+  background: rgba(248, 113, 113, 0.04);
+}
+
+.td {
+  padding: 0.5rem 0.875rem;
+  color: var(--color-text);
+  max-width: 240px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.empty {
+  color: var(--color-text-muted);
+  font-style: normal;
+}
+
+.statusOk {
+  color: var(--color-success);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.statusErr {
+  color: var(--color-error);
+  font-size: 0.75rem;
+  cursor: help;
+  text-decoration: underline dotted;
+}
