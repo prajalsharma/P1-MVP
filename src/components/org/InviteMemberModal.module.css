@@ -1,0 +1,228 @@
+/* InviteMemberModal.module.css — Arkova brand */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(9, 12, 18, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  backdrop-filter: blur(2px);
+}
+
+.panel {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  width: 100%;
+  max-width: 440px;
+  margin: 1rem;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.closeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.closeBtn:hover {
+  background: var(--color-surface-2);
+  color: var(--color-text);
+}
+
+.body {
+  padding: 1.25rem 1.5rem 1.5rem;
+}
+
+/* ── Form ──────────────────────────────────────────────────────────────────── */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.desc {
+  font-size: 0.875rem;
+  color: var(--color-text-sub);
+  margin: 0;
+  line-height: 1.55;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.input {
+  width: 100%;
+  height: 40px;
+  padding: 0 0.875rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  color: var(--color-text);
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 0.15s;
+  box-sizing: border-box;
+}
+
+.input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.input:focus {
+  border-color: var(--color-border-focus);
+}
+
+.input:disabled {
+  opacity: 0.5;
+}
+
+.errorMsg {
+  padding: 0.625rem 0.875rem;
+  background: var(--color-error-bg);
+  border: 1px solid var(--color-error-border);
+  border-radius: 7px;
+  color: var(--color-error);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.625rem;
+  padding-top: 0.25rem;
+}
+
+.cancelBtn {
+  height: 38px;
+  padding: 0 1rem;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  color: var(--color-text-sub);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.cancelBtn:hover:not(:disabled) {
+  background: var(--color-surface-2);
+}
+
+.cancelBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.submitBtn {
+  height: 38px;
+  padding: 0 1.25rem;
+  background: var(--color-primary);
+  border: none;
+  border-radius: 8px;
+  color: #09111c;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.submitBtn:hover:not(:disabled) {
+  background: var(--color-primary-hover);
+}
+
+.submitBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ── Success state ─────────────────────────────────────────────────────────── */
+
+.successState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.successIcon {
+  color: var(--color-success);
+  display: flex;
+}
+
+.successMessage {
+  font-size: 0.9375rem;
+  color: var(--color-text);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.successActions {
+  display: flex;
+  gap: 0.625rem;
+}
+
+.inviteAnotherBtn {
+  height: 36px;
+  padding: 0 1rem;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  color: var(--color-text-sub);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.inviteAnotherBtn:hover {
+  background: var(--color-surface-2);
+}
+
+.doneBtn {
+  height: 36px;
+  padding: 0 1.25rem;
+  background: var(--color-primary);
+  border: none;
+  border-radius: 8px;
+  color: #09111c;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.doneBtn:hover {
+  background: var(--color-primary-hover);
+}
